@@ -6,7 +6,12 @@ import threading
 import time
 import os
 
-os.system('cls')
+def check_OS():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+check_OS()
 
 def loading_animation():
     symbols = "|/-\\"

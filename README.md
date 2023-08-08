@@ -6,7 +6,7 @@
       <img src="https://img.shields.io/badge/Version-2.0.0-darkgreen">
         <img src="https://img.shields.io/badge/Release%20Date-august%202023-purple">
   <img src="https://shields.io/badge/Python-100%25-066da5">
-  <img src="https://shields.io/badge/Platform-Linux-darkred">
+  <img src="https://shields.io/badge/Platform-Linux/Windows/Mac-darkred">
     </a>
   </p>
 </p>

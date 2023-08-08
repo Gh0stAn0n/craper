@@ -12,18 +12,23 @@
 </p>
 
 shraper (shitty scraper) is a Python script that allows users to search for and retrieve free course links from various websites.
+
 The script uses web scraping techniques to extract relevant course information, including the course URL and content size. The user can provide search queries as arguments to find courses of interest.
 
 ### Project Features:
 
 Searches for free courses on multiple websites: "freecoursesite.com," "gigacourse.com," and "courseclub.me."
+
 Retrieves course details, including URL and content size (in GB or MB).
+
 Supports multi-threading for faster search and loading animation.
 
 ### Usage:
 
 Ensure you have Python 3.x.x installed.
+
 Install required dependencies: pip install requests beautifulsoup4.
+
 Run the script with search queries as arguments.
 
     python3 shraper.py matlab
@@ -32,7 +37,9 @@ Run the script with search queries as arguments.
 ### Updates:
 
 Update 2.0.0 allow the user to search for symbols inside the query.
+
 If C++ was searched before, it would have interfered with the URL, causing it to give false-positives
+
 The allowed symbols in the current shraper version are: #, *, +
 
 ### Notes:

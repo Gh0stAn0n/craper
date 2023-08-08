@@ -40,7 +40,7 @@ Update 2.0.0 allow the user to search for symbols inside the query.
 
 If C++ was searched before, it would have interfered with the URL, causing it to give false-positives
 
-The allowed symbols in the current shraper version are: #, *, +
+The allowed symbols in the current shraper version are: #, *, +, -
 
 ### Notes:
 

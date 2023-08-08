@@ -28,7 +28,13 @@ Run the script with search queries as arguments.
 
     python3 shraper.py matlab
     python3 shraper.py rust-and-crust
-  
+
+### Updates:
+
+Update 2.0.0 allow the user to search for symbols inside the query.
+If C++ was searched before, it would have interfered with the URL, causing it to give false-positives
+The allowed symbols in the current shraper version are: #, *, +
+
 ### Notes:
 
 This script may rely on the structure of the target websites, so changes to those websites' layouts may affect the script's functionality.

@@ -1,4 +1,4 @@
-# About 'shraper'
+# About 'craper'
 
 <p align="center">
    </a>
@@ -11,7 +11,7 @@
   </p>
 </p>
 
-shraper (shitty scraper) is a Python script that allows users to search for and retrieve free course links from various websites.
+craper (courses scraper) is a Python script that allows users to search for and retrieve free course links from various websites.
 
 The script uses web scraping techniques to extract relevant course information, including the course URL and content size. The user can provide search queries as arguments to find courses of interest.
 

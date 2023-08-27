@@ -31,8 +31,8 @@ Install required dependencies: pip install requests beautifulsoup4.
 
 Run the script with search queries as arguments.
 
-    python3 shraper.py matlab
-    python3 shraper.py rust-and-crust
+    python3 craper.py matlab
+    python3 craper.py rust-and-crust
 
 ### Updates:
 
@@ -40,7 +40,7 @@ Update 2.0.0 allow the user to search for symbols inside the query.
 
 If C++ was searched before, it would have interfered with the URL, causing it to give false-positives.
 
-The allowed symbols in the current shraper version are: #, *, +, -
+The allowed symbols in the current craper version are: #, *, +, -
 
 ### Notes:
 

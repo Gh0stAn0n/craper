@@ -1,4 +1,4 @@
-# About 'craper'
+# About 'crapper'
 
 <p align="center">
    </a>
@@ -11,9 +11,9 @@
   </p>
 </p>
 
-craper (courses scraper) is a Python script that allows users to search and retrieve free courses links from various websites.
+crapper (courses scraper) is a Python script that allows users to search and retrieve free courses links from various websites.
 
-The script use web scraping techniques to extract relevant course information. The user can provide search queries as arguments to find the courses of interest.
+The script uses web scraping techniques to extract relevant course information. The user can provide search queries as arguments to find the courses of interest.
 
 ### Project Features:
 
@@ -25,22 +25,22 @@ Supports multi-threading for faster search and loading animation.
 
 ### Usage:
 
-Ensure you have Python 3.x.x installed.
+Ensure you have Python 3 or more installed.
 
 Install required dependencies: pip install requests beautifulsoup4.
 
 Run the script with search queries as arguments.
 
-    python3 craper.py matlab
+    python3 craper.py Matlab
     python3 craper.py rust-and-crust
 
 ### Updates:
 
-Update 2.0.0 allow the user to search for symbols inside the query.
+Update 2.0.0 allows the user to search for symbols inside the query.
 
-If C++ was searched before, it would have interfered with the URL, causing it to give false-positives.
+If C++ was searched before, it would have interfered with the URL, causing it to give false-positive results.
 
-The allowed symbols in the current craper version are: #, *, +, -
+The allowed symbols in the current crapper version are: #, *, +, -
 
 ### Notes:
 

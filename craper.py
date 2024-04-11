@@ -148,13 +148,13 @@ def main():
             total_size_gb = sum(course['gb_value'] for course in sorted_courses) / 1024
 
             print(f"\nTotal courses found: {total_courses}")
-            print(f"Total size of courses: {total_size_gb:.2f} GB\n")
+            print(f"Total content of courses: {total_size_gb:.2f} GB\n")
 
             for course in sorted_courses:
                 size = course['gb_value'] / 1024 if course['gb_value'] >= 1024 else course['gb_value']
                 print(f"Found on Page: {course['page_number']}")
                 print(f"Course URL: {course['url']}")
-                print(f"Content Size: {size:.2f} GB\n" if course['gb_value'] >= 1024 else f"Size: {size:.2f} MB\n")
+                print(f"Size: {size:.2f} GB\n" if course['gb_value'] >= 1024 else f"Size: {size:.2f} MB\n")
         else:
             print(f"No relevant courses found for the search query: {query}")
 

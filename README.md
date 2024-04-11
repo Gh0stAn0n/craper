@@ -1,4 +1,4 @@
-# About 'crapper'
+# About 'craper'
 
 <p align="center">
    </a>
@@ -11,7 +11,7 @@
   </p>
 </p>
 
-crapper (courses scraper) is a Python script that allows users to search and retrieve free courses links from various websites.
+craper (courses scraper) is a Python script that allows users to search and retrieve free courses links from various websites.
 
 The script uses web scraping techniques to extract relevant course information. The user can provide search queries as arguments to find the courses of interest.
 

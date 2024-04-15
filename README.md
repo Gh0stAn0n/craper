@@ -34,16 +34,35 @@ Run the script with search queries as arguments.
     python3 craper.py Matlab
     python3 craper.py rust-and-crust
 
-### Search multiple queries
+
+### Search multiple queries:
+
+Add manually the wanted keywords into a file by using for example > echo -n "devops\ndevseops" > file
 
     id=1; cat file | while read argv; do if [[ $id -lt 10 ]]; then id=0$id; fi; echo "$id : $argv"; python3 craper.py $argv >> ALL; ((id++)) ;done
 
 ![2024-04-11 16_27_51-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/523443f6-d65c-4ed9-a353-cbe3d16f7276)
 
 
+### File Output:
+
+After mannually removing the unwanted data from the file or by using regex, this will be the file output:
+
+![2024-04-11 16_44_07-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/55144780-5c01-4f11-8f09-1496881bd022)
+
+![2024-04-11 16_44_29-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/d1be06f9-7116-466d-bb16-a733e5d617e5)
+
 
 ### Filter using REGEX:
 
+The courses may be available in multiple domain with a different file name in the URI.
+In  order to sort it and retrieve the most potential valuable (based on their mentions), use sort and uniq command combined with regex.
+
+    cat ALL | grep -iE https | cut -d "/" -f4 | sed 's/^[0-9]*-//' | sed 's/-[0-9]*$//' | sort -n | uniq -c | sort -u
+
+![2024-04-15 11_32_26-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/415ce0b4-b95c-45d5-aef9-29e4145a868a)
+
+Finally, grep the filename from the original file to retrieve the ourse URL.
 
 
 ### Updates:

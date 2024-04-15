@@ -57,24 +57,24 @@ Or by using REGular EXpressions:
 
 ### Filter using REGEX:
 
-The courses may be available in multiple domain with a different filename in the URI.
+The courses may be available in multiple domain with a different coursename in the URI.
 In  order to sort it and retrieve the most potential valuable (based on their mentions), use sort and uniq command combined with regex.
 
     cat ALL | grep -iE https | cut -d "/" -f4 | sed 's/^[0-9]*-//' | sed 's/-[0-9]*$//' | sort -n | uniq -c | sort -u
 
 ![2024-04-15 11_32_26-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/415ce0b4-b95c-45d5-aef9-29e4145a868a)
 
-Finally, grep the filename from the original file to retrieve the course URL and its size amount.
+Finally, grep the coursename from the original file to retrieve the course URL and its size amount.
 
 Get the line number of the wanted course:
 
-    cat ALL | grep -n filename
+    cat ALL | grep -n coursename
 Increase the line number to get nothing but the URL and size amount of the course.
 
-    cat ALL | grep -n filename | cut -d ":" -f1 | while read num; do ((num++)); echo $num; done
+    cat ALL | grep -n coursename | cut -d ":" -f1 | while read num; do ((num++)); echo $num; done
 Get the full result and compare the differences between each link and VOILA.
 
-    cat ALL | grep -n filename | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
+    cat ALL | grep -n coursename | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
 
 ![2024-04-15 12_27_54-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/e54753d8-94e6-4e5e-beb2-c3aaaff8bca1)
 
@@ -85,9 +85,9 @@ You can either do it based on the most common URI using tail (set tail -f as you
     cat ALL | grep -iE https | cut -d "/" -f4 | sed 's/^[0-9]*-//' | sed 's/-[0-9]*$//' | sort -n | uniq -c | sort -u | tail | cut -d " " -f8 | while read uri; do echo "\n\nCOURSE: $uri"; cat ALL | grep -n "$uri" | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done; done
 ![2024-04-15 12_45_19-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/87fec506-7cf1-4004-9e05-9576308cb438)
 
-Or do it mannually, using the filenames itself instead of tail:
+Or do it mannually, using the coursenames themself instead of tail:
 
-    cat ALL | grep -iEn (filename_1|filename_2) | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
+    cat ALL | grep -iEn (coursename_1|coursename_2) | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
 ![2024-04-15 13_31_08-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/b5dcdd02-0552-428b-8aa4-b263abbc9566)
 
 

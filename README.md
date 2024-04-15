@@ -80,14 +80,14 @@ Get the full result and compare the differences between each link and VOILA.
 
 ### Search for multiple queries and their URL
 
-You can either do it based on the most common URI using tail:
+You can either do it based on the most common URI using tail (set tail -f as you need):
 
     cat ALL | grep -iE https | cut -d "/" -f4 | sed 's/^[0-9]*-//' | sed 's/-[0-9]*$//' | sort -n | uniq -c | sort -u | tail | cut -d " " -f8 | while read uri; do echo "\n\nCOURSE: $uri"; cat ALL | grep -n "$uri" | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done; done
 ![2024-04-15 12_45_19-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/87fec506-7cf1-4004-9e05-9576308cb438)
 
 Or do it mannually, using the filenames itself instead of tail:
 
-    cat ALL | grep -iEn (learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker|the-complete-devsecops-course-with-docker-and-kubernetes) | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
+    cat ALL | grep -iEn (filename_1|filename_2) | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
 ![2024-04-15 13_31_08-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/b5dcdd02-0552-428b-8aa4-b263abbc9566)
 
 

@@ -37,7 +37,7 @@ Run the script with search queries as arguments.
 
 ### Search multiple queries:
 
-Add manually the wanted keywords into a file by using for example > echo -n "devops\ndevseops" > file
+Add manually the wanted keywords into a file by using for example: echo -n "devops\ndevseops" > file
 
     id=1; cat file | while read argv; do if [[ $id -lt 10 ]]; then id=0$id; fi; echo "$id : $argv"; python3 craper.py $argv >> ALL; ((id++)) ;done
 
@@ -64,7 +64,19 @@ In  order to sort it and retrieve the most potential valuable (based on their me
 
 ![2024-04-15 11_32_26-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/415ce0b4-b95c-45d5-aef9-29e4145a868a)
 
-Finally, grep the filename from the original file to retrieve the course URL.
+Finally, grep the filename from the original file to retrieve the course URL and its size amount.
+
+Get the line number of the wanted course:
+
+    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker
+Increase the line number to get nothing but the URL and size amount of the course.
+
+    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker | cut -d ":" -f1 | while read num; do ((num++)); echo $num; done
+Get the full result and compare the differences between each link and VOILA.
+
+    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
+
+![2024-04-15 12_27_54-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/e54753d8-94e6-4e5e-beb2-c3aaaff8bca1)
 
 
 ### Updates:

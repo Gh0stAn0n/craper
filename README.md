@@ -68,13 +68,13 @@ Finally, grep the filename from the original file to retrieve the course URL and
 
 Get the line number of the wanted course:
 
-    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker
+    cat ALL | grep -n filename
 Increase the line number to get nothing but the URL and size amount of the course.
 
-    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker | cut -d ":" -f1 | while read num; do ((num++)); echo $num; done
+    cat ALL | grep -n filename | cut -d ":" -f1 | while read num; do ((num++)); echo $num; done
 Get the full result and compare the differences between each link and VOILA.
 
-    cat ALL | grep -n learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
+    cat ALL | grep -n filename | cut -d ":" -f1 | while read num; do ((num++)); cat ALL | head -$num | tail -2; echo ""; done
 
 ![2024-04-15 12_27_54-Kali Linux  Running  - Oracle VM VirtualBox](https://github.com/Gh0stAn0n/craper/assets/102325071/e54753d8-94e6-4e5e-beb2-c3aaaff8bca1)
 
